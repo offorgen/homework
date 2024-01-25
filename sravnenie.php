@@ -28,3 +28,13 @@ $a = (bool)null;
 $b = (bool)'';
 
 var_dump($a == $b);
+
+$a = (int)1;
+$b = '12test';
+
+var_dump($a xor $b);
+
+$a = '';
+$b = boolval(1);
+
+var_dump($a || $b);

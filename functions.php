@@ -1,5 +1,7 @@
 <?php
 
+
+declare(strict_types=1);
 function S(int|float $number1): int|float
 {
     return pi() * ($number1 ** 2);

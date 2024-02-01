@@ -41,18 +41,20 @@ declare(strict_types=1);
 //};
 //$result = $function('allo');
 //echo $result;
-$function = function(){
+$function = function () {
     echo 'result';
 };
 function sum(int $number1, int $number2, ?closure $function = null): int|float
-{   $result = $number1 * $number2;
+{
+    $result = $number1 * $number2;
 
     if (isset($function)) {
         echo $result . PHP_EOL;
     }
     return $result;
 }
-sum(5 , 3, $function);
+
+sum(5, 3, $function);
 
 //$function = function () {
 //    echo 'hello';

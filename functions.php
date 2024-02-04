@@ -41,15 +41,18 @@ declare(strict_types=1);
 //};
 //$result = $function('allo');
 //echo $result;
-$function = function () {
-    echo 'result';
+
+
+
+$function = function ($result) {
+    echo $result . PHP_EOL;
 };
 function sum(int $number1, int $number2, ?closure $function = null): int|float
 {
     $result = $number1 * $number2;
-
     if (isset($function)) {
-        echo $result . PHP_EOL;
+        $function($result) . PHP_EOL;
+
     }
     return $result;
 }
@@ -61,3 +64,27 @@ sum(5, 3, $function);
 //};
 //
 //$function();
+
+
+//function filtertext(string $text, ?closure $funcfilt = null, ?closure $functrim = null): string
+//{
+//    if (isset($funcfilt)) {
+//        $text = $funcfilt($text);
+//        if (isset($functrim)) {
+//            $text = $functrim($funcfilt($text));
+//        }
+//    }
+//    return $text;
+//}
+//$text = '   Hello World    ?';
+//
+//$funcfilt = function (string $text ){
+//    return str_replace( 'l' , '1' , $text);
+//};
+//
+//$functrim = function (string $text) {
+//    return trim($text);
+//
+//};
+//
+// echo filtertext( $text , $funcfilt , $functrim ) . PHP_EOL;
